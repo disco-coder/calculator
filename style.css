@@ -1,0 +1,109 @@
+body {
+  padding: 0;
+  margin: 0;
+  font-size: 10px;
+  box-sizing: border-box;
+}
+
+div {
+  border: 1px solid black;
+  box-sizing: border-box;
+}
+
+#calculator {
+  width: 14.6rem;
+}
+
+#display {
+  height: 5.05rem;
+  width: auto;
+}
+
+#controls {
+  display: grid;
+  grid-template-columns: 3.6rem 3.6rem 3.6rem 3.6rem;
+  grid-template-rows: auto;
+  grid-template-areas:
+    "clear plus-minus percent divide"
+    "seven eight nine multiply"
+    "four five six minus"
+    "one two three plus"
+    "zero zero point equals";
+  height: 14.9rem;
+}
+
+.clear {
+  grid-area: clear;
+}
+
+.plus-minus {
+  grid-area: plus-minus;
+}
+
+.percent {
+  grid-area: percent;
+}
+
+.point {
+  grid-area: point;
+}
+
+.plus {
+  grid-area: plus;
+}
+
+.minus {
+  grid-area: minus;
+}
+
+.multiply {
+  grid-area: multiply;
+}
+
+.divide {
+  grid-area: divide;
+}
+
+.equals {
+  grid-area: equals;
+}
+
+.zero {
+  grid-area: zero;
+}
+
+.one {
+  grid-area: one;
+}
+
+.two {
+  grid-area: two;
+}
+
+.three {
+  grid-area: three;
+}
+
+.four {
+  grid-area: four;
+}
+
+.five {
+  grid-area: five;
+}
+
+.six {
+  grid-area: six;
+}
+
+.seven {
+  grid-area: seven;
+}
+
+.eight {
+  grid-area: eight;
+}
+
+.nine {
+  grid-area: nine;
+}
