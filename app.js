@@ -33,7 +33,7 @@ clearButton.addEventListener("click", () => displayValue.textContent = "");
 
 // Percent function
 let percentButton = document.querySelector(".percent");
-percentButton.addEventListener("click", () => displayValue.textContent = `${displayValue.textContent * 0.01}`)
+percentButton.addEventListener("click", () => displayValue.textContent = `${parseInt(displayValue.textContent) * 0.01}`)
 
 
 
