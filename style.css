@@ -57,12 +57,21 @@ div {
   cursor: default;
 }
 
-.button {
+.number {
   transition: 0.1s;
 }
 
-.button:active {
+.number:active {
   opacity: 0.5;
+}
+
+.operator {
+  transition: 0.1s;
+}
+
+.operator:active {
+  background-color: HSL(37, 50%, 52%);
+  border: inset 0 0 0 2px #000;
 }
 
 .center {

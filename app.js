@@ -6,6 +6,8 @@ let currentOperator = "";
 let operatorButtons = document.querySelectorAll(".operator");
 operatorButtons.forEach((operator) => {
     operator.addEventListener("click", () => {
+        operatorButtons.forEach((operator) => operator.style.boxShadow = "");
+        operator.style.boxShadow = "inset 0 0 0 2px #000";
         if (displayValue.textContent) currentOperator = `${operator.id}`;
     });
 })
@@ -29,7 +31,10 @@ numbers.forEach((number) => {
 
 // Clear display
 let clearButton = document.querySelector(".clear")
-clearButton.addEventListener("click", () => displayValue.textContent = "");
+clearButton.addEventListener("click", () => {
+    operatorButtons.forEach((operator) => operator.style.opacity = 1);
+    displayValue.textContent = "";
+});
 
 // Percent function
 let percentButton = document.querySelector(".percent");
