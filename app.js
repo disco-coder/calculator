@@ -1,10 +1,16 @@
+let displayValue = document.querySelector("#display-text");
+
+let buttons = document.querySelectorAll(".button");
+buttons.forEach((button) => {
+    button.addEventListener("click", () => displayValue.textContent = `${displayValue.textContent + button.textContent}`)
+})
+
 
 // Basic math operators
 let add = (a, b) => a + b;
 let subtract = (a, b) => a - b;
 let multiply = (a, b) => a * b;
 let divide = (a, b) => a / b;
-
 
 function operate(operator, a, b) {
     if (operator === "add") return add(a, b);
