@@ -20,19 +20,17 @@ plusMinusButton.addEventListener("click", () => displayValue.textContent = -disp
 let numbers = document.querySelectorAll(".number");
 numbers.forEach((number) => {
     number.addEventListener("click", () => {
-        if (currentOperator != "") {
-            displayValue.textContent = operate(currentOperator, parseInt(displayValue.textContent), parseInt (number.textContent));
-            currentOperator = "";
-        } else {
-            displayValue.textContent = `${displayValue.textContent + number.textContent}`;
+        if (displayValue.textContent == "" && number.textContent == 0) {
+            return;
         }
+        displayValue.textContent = `${displayValue.textContent + number.textContent}`;
     });
 });
 
 // Clear display
 let clearButton = document.querySelector(".clear")
 clearButton.addEventListener("click", () => {
-    operatorButtons.forEach((operator) => operator.style.opacity = 1);
+    operatorButtons.forEach((operator) => operator.style.boxShadow = "");
     displayValue.textContent = "";
 });
 
