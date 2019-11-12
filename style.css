@@ -3,28 +3,32 @@ body {
   margin: 0;
   font-size: 10px;
   box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
 div {
   box-sizing: border-box;
   border-collapse: collapse;
-  border: 1px solid #323031;
 }
 
 #calculator {
-  width: 14.6rem;
+  width: 14.4rem;
 }
 
 #display {
   height: 5.05rem;
   width: auto;
   background-color: #5b5b5b;
+  direction: rtl;
 }
 
 #display-text {
   position: relative;
-  top: 50%;
-  left: 80%;
+  top: 30%;
+  right: 5%;
+  font-size: 3rem;
+  color: #ffffff;
+  font-weight: 200;
 }
 
 #controls {
@@ -41,9 +45,34 @@ div {
 }
 
 .button {
-  color: #ececec;
+  text-align: center;
+  user-select: none;
+  box-sizing: border-box;
+  border: 1px solid rgb(0,0,0,0.4);
 }
 
+.button:hover {
+  cursor: default;
+}
+
+.button {
+  transition: 0.1s;
+}
+
+.button:active {
+  opacity: 0.5;
+}
+
+.center {
+  color: #ececec;
+  text-align: center;
+  font-size: 1.25rem;
+  display: inline-block;
+  margin-top: 0.7rem;
+}
+
+
+/* Colors start */
 .orange {
   background-color: #ffa00a;
 }
@@ -56,7 +85,9 @@ div {
 .dark-grey {
   background-color: #6a6a6a;
 }
+/* Colors end */
 
+/* Grid start */
 .clear {
   grid-area: clear;
 }
@@ -132,3 +163,4 @@ div {
 .nine {
   grid-area: nine;
 }
+/* Grid end*/
