@@ -5,12 +5,14 @@ let displayValue = document.querySelector("#display-text");
 let currentOperator = "";
 let operatorButtons = document.querySelectorAll(".operator");
 operatorButtons.forEach((operator) => {
-    operator.addEventListener("click", () => currentOperator = `${operator.id}`)
+    operator.addEventListener("click", () => {
+        if (displayValue.textContent) currentOperator = `${operator.id}`;
+    });
 })
 
 // Plus-minus button
 let plusMinusButton = document.querySelector(".plus-minus");
-plusMinusButton.addEventListener("click", () => displayValue.textContent = displayValue.textContent);
+plusMinusButton.addEventListener("click", () => displayValue.textContent = -displayValue.textContent);
 
 // Clickable number buttons
 let numbers = document.querySelectorAll(".number");
