@@ -6,8 +6,9 @@ body {
 }
 
 div {
-  border: 1px solid black;
   box-sizing: border-box;
+  border-collapse: collapse;
+  border: 1px solid #323031;
 }
 
 #calculator {
@@ -17,6 +18,13 @@ div {
 #display {
   height: 5.05rem;
   width: auto;
+  background-color: #5b5b5b;
+}
+
+#display-text {
+  position: relative;
+  top: 50%;
+  left: 80%;
 }
 
 #controls {
@@ -30,6 +38,23 @@ div {
     "one two three plus"
     "zero zero point equals";
   height: 14.9rem;
+}
+
+.button {
+  color: #ececec;
+}
+
+.orange {
+  background-color: #ffa00a;
+}
+
+.light-grey {
+  background-color: #838383;
+  opacity: 0.8;
+}
+
+.dark-grey {
+  background-color: #6a6a6a;
 }
 
 .clear {
