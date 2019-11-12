@@ -1,13 +1,22 @@
 // Display content
 let displayValue = document.querySelector("#display-text");
 
+let currentValue = "";
+
 // Store operator
 let currentOperator = "";
 let operatorButtons = document.querySelectorAll(".operator");
 operatorButtons.forEach((operator) => {
     operator.addEventListener("click", () => {
+        // Operator inset shadow
         operatorButtons.forEach((operator) => operator.style.boxShadow = "");
         operator.style.boxShadow = "inset 0 0 0 2px #000";
+
+        if (currentOperator != "" && currentValue != "") {
+            displayValue.textContent = operate(currentOperator, parseInt(currentValue), parseInt(displayValue.textContent));
+            currentValue = "";
+        }
+        
         if (displayValue.textContent) currentOperator = `${operator.id}`;
     });
 })
@@ -23,22 +32,39 @@ numbers.forEach((number) => {
         if (displayValue.textContent == "" && number.textContent == 0) {
             return;
         }
+
+        if (currentOperator != "" && currentValue == "") {
+            currentValue = displayValue.textContent;
+            displayValue.textContent = "";
+        }
+        
         displayValue.textContent = `${displayValue.textContent + number.textContent}`;
     });
 });
+
+// Equals button
+let equalsButton = document.querySelector(".equals");
+equalsButton.addEventListener("click", () => {
+    if (currentValue != "") {
+        displayValue.textContent = operate(currentOperator, parseInt(currentValue), parseInt(displayValue.textContent));
+        currentValue = "";
+        currentOperator = "";
+    }
+    operatorButtons.forEach((operator) => operator.style.boxShadow = "");
+})
 
 // Clear display
 let clearButton = document.querySelector(".clear")
 clearButton.addEventListener("click", () => {
     operatorButtons.forEach((operator) => operator.style.boxShadow = "");
     displayValue.textContent = "";
+    currentOperator = "";
+    currentValue = "";
 });
 
 // Percent function
 let percentButton = document.querySelector(".percent");
-percentButton.addEventListener("click", () => displayValue.textContent = `${parseInt(displayValue.textContent) * 0.01}`)
-
-
+percentButton.addEventListener("click", () => displayValue.textContent = `${parseInt(displayValue.textContent) * 0.01}`);
 
 // Basic math operators
 let add = (a, b) => a + b;
