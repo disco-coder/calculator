@@ -19,13 +19,15 @@ div {
   height: 5.05rem;
   width: auto;
   background-color: #5b5b5b;
-  direction: rtl;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
 }
 
 #display-text {
   position: relative;
-  top: 30%;
-  right: 5%;
+  top: -3%;
+  right: 6%;
   font-size: 3rem;
   color: #ffffff;
   font-weight: 200;
