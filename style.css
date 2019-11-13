@@ -124,7 +124,7 @@ div {
 }
 /* Borders end */
 
-.number:active {
+.number:active, .clear:active, .plus-minus:active, .percent:active {
   opacity: 0.5;
 }
 
