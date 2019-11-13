@@ -6,6 +6,7 @@
   <title>Calculator</title>
 </head>
 <body>
+  <h1>A simple calculator</h1>
   <div id="calculator">
     <div id="circles">
       <span class="dot red"></span>
@@ -37,5 +38,12 @@
       <div class="button equals orange"><span class="center">=</span></div>
     </div>
   </div>
+  <script src="fitty.min.js"></script>
+  <script>
+  fitty('#display-text', {
+    minSize: 12,
+    maxSize: 45
+  });
+  </script>
 </body>
 </html>

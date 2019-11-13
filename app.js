@@ -1,16 +1,16 @@
-// Display content
+// Variables for data
 let displayValue = document.querySelector("#display-text");
-
 let currentValue = "";
+let currentOperator = "";
 
+// Stores bool whether equals was pressed, helper for clearing display
 let pressedEquals;
 
-// Store operator
-let currentOperator = "";
 let operatorButtons = document.querySelectorAll(".operator");
 operatorButtons.forEach((operator) => {
     operator.addEventListener("click", () => {
-        // Operator inset shadow
+        
+        // Operator onclick inset shadow
         operatorButtons.forEach((operator) => operator.style.boxShadow = "");
         operator.style.boxShadow = "inset 0 0 0 2px #000";
 
