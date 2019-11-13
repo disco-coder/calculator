@@ -15,7 +15,7 @@ operatorButtons.forEach((operator) => {
         operator.style.boxShadow = "inset 0 0 0 2px #000";
 
         if (currentOperator != "" && currentValue != "") {
-            displayValue.textContent = operate(currentOperator, parseInt(currentValue), parseInt(displayValue.textContent));
+            displayValue.textContent = operate(currentOperator, parseFloat(currentValue), parseFloat(displayValue.textContent));
             currentValue = "";
         }
         
@@ -59,7 +59,7 @@ numbers.forEach((number) => {
 let equalsButton = document.querySelector(".equals");
 equalsButton.addEventListener("click", () => {
     if (currentValue != "") {
-        displayValue.textContent = operate(currentOperator, parseInt(currentValue), parseInt(displayValue.textContent));
+        displayValue.textContent = operate(currentOperator, parseFloat(currentValue), parseFloat(displayValue.textContent));
         currentValue = "";
         currentOperator = "";
         pressedEquals = true;
