@@ -3,6 +3,8 @@ let displayValue = document.querySelector("#display-text");
 
 let currentValue = "";
 
+let pressedEquals;
+
 // Store operator
 let currentOperator = "";
 let operatorButtons = document.querySelectorAll(".operator");
@@ -21,6 +23,14 @@ operatorButtons.forEach((operator) => {
     });
 })
 
+// Decimal button
+let decimalButton = document.querySelector(".point");
+decimalButton.addEventListener("click", () => {
+    if (displayValue.textContent.slice(-1) != ".") {
+        displayValue.textContent = displayValue.textContent + ".";
+    }
+})
+
 // Plus-minus button
 let plusMinusButton = document.querySelector(".plus-minus");
 plusMinusButton.addEventListener("click", () => displayValue.textContent = -displayValue.textContent);
@@ -37,7 +47,10 @@ numbers.forEach((number) => {
             currentValue = displayValue.textContent;
             displayValue.textContent = "";
         }
-        
+        if (pressedEquals) {
+            displayValue.textContent = "";
+            pressedEquals = false;
+        }
         displayValue.textContent = `${displayValue.textContent + number.textContent}`;
     });
 });
@@ -49,6 +62,7 @@ equalsButton.addEventListener("click", () => {
         displayValue.textContent = operate(currentOperator, parseInt(currentValue), parseInt(displayValue.textContent));
         currentValue = "";
         currentOperator = "";
+        pressedEquals = true;
     }
     operatorButtons.forEach((operator) => operator.style.boxShadow = "");
 })
@@ -73,8 +87,8 @@ let multiply = (a, b) => a * b;
 let divide = (a, b) => a / b;
 
 function operate(operator, a, b) {
-    if (operator === "add") return add(a, b);
-    if (operator === "subtract") return subtract(a, b);
-    if (operator === "multiply") return multiply(a, b);
-    if (operator === "divide") return divide(a, b);
+    if (operator === "add") return Math.round(add(a, b) * 1000) / 1000;
+    if (operator === "subtract") return Math.round(subtract(a, b) * 1000) / 1000;
+    if (operator === "multiply") return Math.round(multiply(a, b) * 1000) / 1000;
+    if (operator === "divide") return Math.round(divide(a, b) * 1000) / 1000;
 }
