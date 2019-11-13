@@ -4,6 +4,7 @@ body {
   font-size: 10px;
   box-sizing: border-box;
   font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  background-color: #bdc5ca;
 }
 
 div {
@@ -13,6 +14,36 @@ div {
 
 #calculator {
   width: 14.4rem;
+  position: absolute;
+  top: 25%;
+  left: 40%;
+  box-shadow: 10px 10px 15px grey;
+}
+
+#circles {
+  position: absolute;
+  top: 0.75%;
+  left: 2%;
+}
+
+.dot {
+  height: 12px;
+  width: 12px;
+  border-radius: 50%;
+  display: inline-block;
+  margin: 1.5px;
+}
+
+.red {
+  background-color: #ff5a53;
+}
+
+.yellow {
+  background-color: #e6c029;
+}
+
+.green {
+  background-color: #51c32b;
 }
 
 #display {
@@ -22,6 +53,9 @@ div {
   display: flex;
   justify-content: flex-end;
   align-items: flex-end;
+  border-right: 1px solid rgb(0,0,0,0.6);
+  border-left: 1px solid rgb(0,0,0,0.6);
+  border-top: 1px solid rgb(0,0,0,0.6);
 }
 
 #display-text {
@@ -50,16 +84,44 @@ div {
   text-align: center;
   user-select: none;
   box-sizing: border-box;
-  border: 1px solid rgb(0,0,0,0.4);
 }
 
 .button:hover {
   cursor: default;
 }
 
-.number {
+/* Borders start */
+.number, .point {
   transition: 0.1s;
+  border-top: 1px solid rgb(0,0,0,0.6);
+  border-right: 1px solid rgb(0,0,0,0.6);
 }
+
+.point, .zero, .equals {
+  border-bottom: 1px solid rgb(0,0,0,0.6);
+}
+
+.seven, .four, .one, .zero, .clear {
+  border-left: 1px solid rgb(0,0,0,0.6);
+}
+
+.multiply, .minus, .plus, .equals {
+  border-top: 1px solid rgb(0,0,0,0.4);
+  border-right: 1px solid rgb(0,0,0,0.6);
+}
+
+.divide {
+  border-right: 1px solid rgb(0,0,0,0.6);
+}
+
+.clear, .plus-minus, .percent {
+  border-right: 1px solid rgb(0,0,0,0.4);
+}
+
+.point {
+  border-right: 1px solid rgb(0,0,0,0.6);
+}
+/* Borders end */
 
 .number:active {
   opacity: 0.5;
