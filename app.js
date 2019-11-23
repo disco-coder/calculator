@@ -32,13 +32,11 @@ clearDisplay();
 const percentButton = document.querySelector(".percent");
 getPercentage();
 
-// Basic math operators
-let add = (a, b) => a + b;
-let subtract = (a, b) => a - b;
-let multiply = (a, b) => a * b;
-let divide = (a, b) => a / b;
-
 function operate(operator, a, b) {
+    const add = (a, b) => a + b;
+    const subtract = (a, b) => a - b;
+    const multiply = (a, b) => a * b;
+    const divide = (a, b) => a / b;
     if (operator === "add") return Math.round(add(a, b) * 1000) / 1000;
     if (operator === "subtract") return Math.round(subtract(a, b) * 1000) / 1000;
     if (operator === "multiply") return Math.round(multiply(a, b) * 1000) / 1000;
