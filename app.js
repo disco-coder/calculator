@@ -76,8 +76,15 @@ function displayNumber() {
     numbers.forEach((number) => {
         number.addEventListener("click", () => {
             if (displayValue.textContent == "" && number.textContent == 0) {
+                displayValue.textContent = `${displayValue.textContent + number.textContent}`;
                 return;
             }
+
+            if (displayValue.textContent == "0" && number.textContent == 0) return;
+
+            if (displayValue.textContent == "" && number.textContent == 0) return;
+
+            if (displayValue.textContent == "0") return;
     
             if (currentOperator != "" && currentValue == "") {
                 currentValue = displayValue.textContent;
@@ -112,7 +119,7 @@ function selectOperator() {
 
 function makeDecimal() {
     decimalButton.addEventListener("click", () => {
-        if (displayValue.textContent.slice(-1) != ".") {
+        if (displayValue.textContent.indexOf(".") == -1 && displayValue.textContent.length >= 1) {
             displayValue.textContent = displayValue.textContent + ".";
         }
     })
