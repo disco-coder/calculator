@@ -1,7 +1,15 @@
 # Calculator
 
-This is the *Calculator* project for [The Odin Project](https://www.theodinproject.com/courses/web-development-101/lessons/calculator).
+A simple calculator inspired by the stock macOS calculator.
 
-## Summary
+## Getting Started
 
-This is a rather simple calculator inspired by the stock macOS calculator. The text scaling script used is [Fitty](https://github.com/rikschennink/fitty).
+Click on the link in the repo's description to use the calculator
+
+## Authors
+
+[disco-trooper](https://github.com/disco-trooper)
+
+## Acknowledgments
+
+The text scaling script used is [Fitty](https://github.com/rikschennink/fitty).
