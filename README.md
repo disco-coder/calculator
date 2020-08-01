@@ -1,6 +1,6 @@
 # Calculator
 
-A simple calculator inspired by the stock macOS calculator.
+A simple calculator inspired by the stock macOS calculator. Project made as a part of [The Odin Project's curriculum](https://www.theodinproject.com/courses/javascript/lessons/library).
 
 ## Getting Started
 
